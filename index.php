@@ -39,7 +39,7 @@ $mail->isSMTP();
 // 0 = off (for production use)
 // 1 = client messages
 // 2 = client and server messages
-$mail->SMTPDebug = 2;
+$mail->SMTPDebug = 0;
 //Set the hostname of the mail server
 $mail->Host = 'mail.smtp2go.com';
 //Set the SMTP port number - likely to be 25, 465 or 587
@@ -56,14 +56,15 @@ $mail->setFrom('gilgilmos@gmail.com', 'Gili Parties');
 $mail->addReplyTo($_POST['email'], $_POST['name']);
 //Set who the message is to be sent to
 
-$mail->addAddress('gilgilmos@gmail.com', 'Gili');
-$mail->addBcc('mor.balo81@gmail.com', 'Mor');
+$mail->addAddress('mor.balo81@gmail.com', 'Gili');
+//$mail->addBcc('mor.balo81@gmail.com', 'Mor');
 //Set the subject line
-$mail->Subject = 'הרשמה למסיבה : '.$_POST['name'];
+$mail->Subject = 'Party Register : '.$_POST['name'];
 //Read an HTML message body from an external file, convert referenced images to embedded,
 //convert HTML into a basic plain-text alternative body
 //$mail->msgHTML(file_get_contents('contents.html'), __DIR__);
 $mail->Body    = $body;
+$mail->IsHTML(true);
 //Replace the plain text body with one created manually
 //$mail->AltBody = 'This is a plain-text message body';
 //Attach an image file
