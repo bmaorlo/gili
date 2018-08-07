@@ -109,8 +109,10 @@
 <div class="container">
     <div class="row">
         <div class="col-md-12">
-
-            <h1>ליין מסיבות האהבה של גילי מוסינזון בסאונה</h1>
+            <center>
+                <h1>ליין מסיבות האהבה של גילי מוסינזון בסאונה</h1>
+                <img src="img/theme.jpeg" width="50%"/>
+            </center>
             <p>
                 בימי ראשון-
                 <br/>
