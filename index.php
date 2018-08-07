@@ -11,13 +11,11 @@
 
             $header  = 'MIME-Version: 1.0' . "\r\n";
             $header .= 'Content-type: text/html; charset=utf-8' . "\r\n";
-             
-            // Create email headers
-            $header .= "From: info@sparty.ga\r\n".
-                'Reply-To: '.$$_POST['email']."\r\n" .
-                'X-Mailer: PHP/' . phpversion();
+            $header .= "From: info@sparty.ga \r\n";  
+            $header .= "Reply-To: ".$_POST['email']." \r\n";  
 
-            //rom: info@sparty.ga";
+
+            //from: info@sparty.ga";
             // IMPORTANT, there is no validation to this page form
 
             // Save image to uploads folder
@@ -38,7 +36,8 @@
                     טלפון : ' . $_POST['phone'] . ' <br/>
                     מהיכן : ' . $_POST['city'] . ' <br/>
                     הערות : ' . $_POST['notes'] . ' <br/>
-                    תמונה : <a href="http://www.sparty.ga/uploads/'.$fileName.'">http://www.sparty.ga/uploads/'.$fileName.'</a><br/><img src="http://www.sparty.ga/uploads/'.$fileName.'"><br/>
+                    תמונה : <a href="http://www.sparty.ga/gili/uploads/'.$fileName.'">http://www.sparty.ga/gili/uploads/'.$fileName.'</a>
+                    <br/><br/><img src="http://www.sparty.ga/gili/uploads/'.$fileName.'"><br/>
                 </body>
                 </html>
             ';
@@ -276,7 +275,7 @@
 <br/>
 17.      ידוע לי כי עלות האירוע הנה בכדי לקיימו ואינה מבטחת את המשתתף בכל ביטוח, וכל נזק שייגרם יהיה על אחריות המשתתף בלבד.
 <br/>
-18.      אני מצהיר בזאת שבעצם השתתפותי באירוע, אני מוותר על כל תביעה כנגד המארגנים.ףץ
+18.      אני מצהיר בזאת שבעצם השתתפותי באירוע, אני מוותר על כל תביעה כנגד המארגנים.
 <br/>
 
             </p>
