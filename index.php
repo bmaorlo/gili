@@ -21,11 +21,12 @@
 
             // Send email
             $body = "User filled the form with this data:". "\n";
-            $body .= "Name: " . $_POST['name'] . "\n";
-            $body .= "Age: " . $_POST['age'] . "\n";
-            $body .= "Email: " . $_POST['email'] . "\n";
-            $body .= "City: " . $_POST['city'] . "\n";
-            $body .= "Notes: " . $_POST['notes'] . "\n";
+            $body .= "שם מלא: " . $_POST['name'] . "\n";
+            $body .= "גיל: " . $_POST['age'] . "\n";
+            $body .= "כתובת אימייל: " . $_POST['email'] . "\n";
+            $body .= "מהיכן: " . $_POST['city'] . "\n";
+            $body .= "טלפון: " . $_POST['phone'] . "\n";
+            $body .= "הערות: " . $_POST['notes'] . "\n";
 
             // IMPORTANT, locally it is not working but on live hosting it should work
             mail($to,$subject,$body, $header);
@@ -281,6 +282,11 @@
                     <div class="form-group">
                         <label>מהיכן</label>
                         <input required type="text" class="form-control" placeholder="" value="<?=(!empty($_POST['city']) ? $_POST['city'] : '')?>" name="city">
+                    </div>
+
+                    <div class="form-group">
+                        <label>טלפון</label>
+                        <input required type="text" class="form-control" placeholder="" value="<?=(!empty($_POST['phone']) ? $_POST['phone'] : '')?>" name="phone">
                     </div>
 
                     <div class="form-group">
