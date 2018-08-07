@@ -53,7 +53,7 @@ $mail->Password = 'pAyZV0cWuPhJ';
 //Set who the message is to be sent from
 $mail->setFrom('gilgilmos@gmail.com', 'Gili Parties');
 //Set an alternative reply-to address
-$mail->addReplyTo('$_POST['email']', $_POST['name']);
+$mail->addReplyTo($_POST['email'], $_POST['name']);
 //Set who the message is to be sent to
 
 $mail->addAddress('gilgilmos@gmail.com', 'Gili');
