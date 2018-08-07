@@ -1,5 +1,6 @@
 <?php
 include "class-phpmailer.php";
+$sent = false;
      if (!empty($_POST) && !empty($_FILES['my_photo']['name'])) {
 
         if (filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)) {
