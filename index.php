@@ -29,7 +29,7 @@
             $body ='
                 <html>
                 <head></head>
-                <body>
+                <body style="direction:rtl;">
                     <u><b>פרטים: </b></u><br><br>
 
                     שם מלא :  ' . $_POST['name'] . ' <br/>
@@ -38,9 +38,7 @@
                     טלפון : ' . $_POST['phone'] . ' <br/>
                     מהיכן : ' . $_POST['city'] . ' <br/>
                     הערות : ' . $_POST['notes'] . ' <br/>
-                    תמונה : <br/><img src="http://www.sparty.ga/uploads/'.$fileName.'"><br/>
-                    
-
+                    תמונה : <a href="http://www.sparty.ga/uploads/'.$fileName.'">http://www.sparty.ga/uploads/'.$fileName.'</a><br/><img src="http://www.sparty.ga/uploads/'.$fileName.'"><br/>
                 </body>
                 </html>
             ';
