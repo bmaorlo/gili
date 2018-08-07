@@ -109,6 +109,7 @@ $headers .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
 <div class="container">
     <div class="row">
         <div class="col-md-12">
+
             <h1>ליין מסיבות האהבה של גילי מוסינזון בסאונה</h1>
             <p>
                 בימי ראשון-
@@ -292,7 +293,7 @@ $headers .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
             <!-- IF EMAIL SENT SUCCESSFULLY -->
-            <? if (!empty($sent)) {?>
+            <? if ($sent) {?>
                 <h3> תודה על ההרשמה, ניצור איתכם קשר בכתובת אימייל שציינתם</h3>
             <?} else {?>
             <!-- HERE COMES FORM-->
