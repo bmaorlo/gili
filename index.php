@@ -293,9 +293,11 @@
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
             <!-- IF EMAIL SENT SUCCESSFULLY -->
-            <?php if ($sent === true) {?>
-                <h3> תודה על ההרשמה, ניצור איתכם קשר בכתובת אימייל שציינתם</h3>
-            <?php} else {?>
+            <?php
+            if($sent === true){
+                echo '<h3> תודה על ההרשמה, ניצור איתכם קשר בכתובת אימייל שציינתם</h3>';
+            }
+            ?>
             <!-- HERE COMES FORM-->
                 <h3> מלא פרטים להרשמה</h3>
                 <form action="index.php" method="post" enctype="multipart/form-data">
@@ -337,86 +339,8 @@
 
                     <button type="submit" class="btn btn-primary">הרשם</button>
                 </form>
-            <?php}?>
         </div>
     </div>
-
-    <!--<div class="row">
-        <div class="col-xs-12 col-sm-12 col-md-12">
-            <hr>
-            <h3>Some Questions</h3>
-            <div class="panel-group" id="accordion">
-                <div class="panel panel-default">
-                    <div class="panel-heading">
-                        <h4 class="panel-title">
-                            <a data-toggle="collapse" data-parent="#accordion" href="#collapse1">
-                                Question One
-                            </a>
-                        </h4>
-                    </div>
-                    <div id="collapse1" class="panel-collapse collapse in">
-                        <div class="panel-body">
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-                            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-                            minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-                            commodo consequat.
-                        </div>
-                    </div>
-                </div>
-                <div class="panel panel-default">
-                    <div class="panel-heading">
-                        <h4 class="panel-title">
-                            <a data-toggle="collapse" data-parent="#accordion" href="#collapse2">
-                                Question Two
-                            </a>
-                        </h4>
-                    </div>
-                    <div id="collapse2" class="panel-collapse collapse">
-                        <div class="panel-body">
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-                            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-                            minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-                            commodo consequat.
-                        </div>
-                    </div>
-                </div>
-                <div class="panel panel-default">
-                    <div class="panel-heading">
-                        <h4 class="panel-title">
-                            <a data-toggle="collapse" data-parent="#accordion" href="#collapse3">
-                                Question Three
-                            </a>
-                        </h4>
-                    </div>
-                    <div id="collapse3" class="panel-collapse collapse">
-                        <div class="panel-body">
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-                            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-                            minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-                            commodo consequat.
-                        </div>
-                    </div>
-                </div>
-                <div class="panel panel-default">
-                    <div class="panel-heading">
-                        <h4 class="panel-title">
-                            <a data-toggle="collapse" data-parent="#accordion" href="#collapse4">
-                                Question Four
-                            </a>
-                        </h4>
-                    </div>
-                    <div id="collapse4" class="panel-collapse collapse">
-                        <div class="panel-body">
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-                            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-                            minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-                            commodo consequat.
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>-->
     <br/><br/><br/><br/><br/>
 </div>
 
