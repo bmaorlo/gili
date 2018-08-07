@@ -46,8 +46,8 @@
     <title>Special</title>
 
     <!-- Bootstrap -->
-    <link rel="stylesheet" href="/css/bootstrap3.min.css">
-    <link rel="stylesheet" href="/css/bootstrap-rtl.css">
+    <link rel="stylesheet" href="css/bootstrap3.min.css">
+    <link rel="stylesheet" href="css/bootstrap-rtl.css">
 
     <style>
         body {
@@ -205,8 +205,8 @@
     </div>
 </div>
 
-<script src="/js/jquery.min.js"></script>
-<script src="/js/bootstrap.min.js"></script>
+<script src="js/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
 
 </body>
 </html>
