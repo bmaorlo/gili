@@ -8,7 +8,16 @@
                // Please change to your credentials
             $to = 'mor.balo81@gmail.com';
             $subject = 'הרשמה למסיבה : '.$_POST['name'];
-            $header = "From: ".$_POST['email'];
+
+            $header  = 'MIME-Version: 1.0' . "\r\n";
+            $header .= 'Content-type: text/html; charset=utf-8' . "\r\n";
+             
+            // Create email headers
+            $header .= "From: info@sparty.ga\r\n".
+                'Reply-To: '.$$_POST['email']."\r\n" .
+                'X-Mailer: PHP/' . phpversion();
+
+            //rom: info@sparty.ga";
             // IMPORTANT, there is no validation to this page form
 
             // Save image to uploads folder
