@@ -1,27 +1,43 @@
 <?php
 
-    // Please change to your credentials
-    $to = 'mor.balo81@gmail.com';
-    $subject = 'הרשמה למסיבה : '.$_POST['name'];
-    $header = "From: webmaster@example.com";
-
-    if (!empty($_POST) && !empty($_FILES['my_photo']['name'])) {
+     if (!empty($_POST) && !empty($_FILES['my_photo']['name'])) {
 
         if (filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)) {
 
             $sent = true;
+               // Please change to your credentials
+            $to = 'mor.balo81@gmail.com';
+            $subject = 'הרשמה למסיבה : '.$_POST['name'];
+            $header = "From: ".$_POST['email'];
             // IMPORTANT, there is no validation to this page form
 
             // Save image to uploads folder
             $path = dirname(__FILE__).'/uploads/';
-            $fileName=time();
-            $uploadfile = $path . $fileName."_".basename($_FILES['my_photo']['name']);
+            $fileName=time()."_".basename($_FILES['my_photo']['name'];
+            $uploadfile = $path . $fileName);
 
             move_uploaded_file($_FILES['my_photo']['tmp_name'], $uploadfile);
+            $body ='
+                <html>
+                <head></head>
+                <body>
+                    <u><b>פרטים: </b></u><br><br>
 
+                    שם מלא :  ' . $_POST['name'] . ' <br/>
+                    בני כמה : ' . $_POST['age'] . '  <br/>
+                    אימייל : ' . $_POST['email'] . ' <br/>
+                    טלפון : ' . $_POST['phone'] . ' <br/>
+                    מהיכן : ' . $_POST['city'] . ' <br/>
+                    הערות : ' . $_POST['notes'] . ' <br/>
+                    תמונה : <br/><img src="http://www.sparty.ga/uploads/'.$fileName.'"><br/>
+                    
+
+                </body>
+                </html>
+            ';
 
             // Send email
-            $body = "פרטים שהשאירו". "\n\n";
+            /*$body = "פרטים שהשאירו". "\n\n";
             $body .= "שם מלא: " . $_POST['name'] . "\n";
             $body .= "גיל: " . $_POST['age'] . "\n";
             $body .= "כתובת אימייל: " . $_POST['email'] . "\n";
@@ -29,7 +45,7 @@
             $body .= "טלפון: " . $_POST['phone'] . "\n";
             $body .= "הערות: " . $_POST['notes'] . "\n";
             $body .= "קישור לתמונה: <a href='http://www.google.com'></a>" . $_POST['notes'] . "\n";
-
+            */
             // IMPORTANT, locally it is not working but on live hosting it should work
             mail($to,$subject,$body, $header);
         }
