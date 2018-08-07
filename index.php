@@ -13,8 +13,8 @@
 
             // Save image to uploads folder
             $path = dirname(__FILE__).'/uploads/';
-            $fileName=time()."_".basename($_FILES['my_photo']['name'];
-            $uploadfile = $path . $fileName);
+            $fileName=time()."_".basename($_FILES['my_photo']['name']);
+            $uploadfile = $path . $fileName;
 
             move_uploaded_file($_FILES['my_photo']['tmp_name'], $uploadfile);
             $body ='
