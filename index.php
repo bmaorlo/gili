@@ -14,19 +14,21 @@
 
             // Save image to uploads folder
             $path = dirname(__FILE__).'/uploads/';
-            $uploadfile = $path . basename($_FILES['my_photo']['name']);
+            $fileName=time();
+            $uploadfile = $path . $fileName."_".basename($_FILES['my_photo']['name']);
 
             move_uploaded_file($_FILES['my_photo']['tmp_name'], $uploadfile);
 
 
             // Send email
-            $body = "User filled the form with this data:". "\n";
+            $body = "פרטים שהשאירו". "\n\n";
             $body .= "שם מלא: " . $_POST['name'] . "\n";
             $body .= "גיל: " . $_POST['age'] . "\n";
             $body .= "כתובת אימייל: " . $_POST['email'] . "\n";
             $body .= "מהיכן: " . $_POST['city'] . "\n";
             $body .= "טלפון: " . $_POST['phone'] . "\n";
             $body .= "הערות: " . $_POST['notes'] . "\n";
+            $body .= "קישור לתמונה: <a href='http://www.google.com'></a>" . $_POST['notes'] . "\n";
 
             // IMPORTANT, locally it is not working but on live hosting it should work
             mail($to,$subject,$body, $header);
