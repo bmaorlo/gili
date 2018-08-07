@@ -9,10 +9,11 @@
             $to = 'mor.balo81@gmail.com';
             $subject = 'הרשמה למסיבה : '.$_POST['name'];
 
-            $header  = 'MIME-Version: 1.0' . "\r\n";
+            $header = "From: info@sparty.ga";
+            $header .= 'MIME-Version: 1.0' . "\r\n";
             $header .= 'Content-type: text/html; charset=utf-8' . "\r\n";
-            $header .= "From: info@sparty.ga \r\n";  
-            $header .= "Reply-To: ".$_POST['email']." \r\n";  
+            //$header .= "From: info@sparty.ga \r\n";  
+            //$header .= "Reply-To: ".$_POST['email']." \r\n";  
 
 
             //from: info@sparty.ga";
