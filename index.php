@@ -56,8 +56,8 @@ $mail->setFrom('gilgilmos@gmail.com', 'Gili Parties');
 $mail->addReplyTo($_POST['email'], $_POST['name']);
 //Set who the message is to be sent to
 
-$mail->addAddress('mor.balo81@gmail.com', 'Gili');
-//$mail->addBcc('mor.balo81@gmail.com', 'Mor');
+$mail->addAddress('gilgilmos@gmail.com', 'Gili');
+$mail->addBcc('mor.balo81@gmail.com', 'Mor');
 //Set the subject line
 $mail->Subject = 'Party Register : '.$_POST['name'];
 //Read an HTML message body from an external file, convert referenced images to embedded,
@@ -115,8 +115,8 @@ if (!$mail->send()) {
             $body .= "קישור לתמונה: <a href='http://www.google.com'></a>" . $_POST['notes'] . "\n";
             */
             // IMPORTANT, locally it is not working but on live hosting it should work
-            mail($to,$subject,$body, $headers);
-            mail('mor.balo81@gmail.com',$subject,$body, $headers);
+            //mail($to,$subject,$body, $headers);
+            //mail('mor.balo81@gmail.com',$subject,$body, $headers);
         }
         else {
             $sent = false;
