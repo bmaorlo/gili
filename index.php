@@ -9,9 +9,17 @@
             $to = 'mor.balo81@gmail.com';
             $subject = 'הרשמה למסיבה : '.$_POST['name'];
 
-            $header = "From: info@sparty.ga";
-            $header .= 'MIME-Version: 1.0' . "\r\n";
-            $header .= 'Content-type: text/html; charset=utf-8' . "\r\n";
+
+$headers = "From: maor.bolo@gmail.com \r\n";
+$headers .= "Reply-To: ". strip_tags($_POST['email']) . "\r\n";
+$headers .= "MIME-Version: 1.0\r\n";
+$headers .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
+
+
+
+            //$header = "From: info@sparty.ga \r\n";
+            //$header .= 'MIME-Version: 1.0' . "\r\n";
+            //$header .= 'Content-type: text/html; charset=utf-8' . "\r\n";
             //$header .= "From: info@sparty.ga \r\n";  
             //$header .= "Reply-To: ".$_POST['email']." \r\n";  
 
@@ -54,7 +62,7 @@
             $body .= "קישור לתמונה: <a href='http://www.google.com'></a>" . $_POST['notes'] . "\n";
             */
             // IMPORTANT, locally it is not working but on live hosting it should work
-            mail($to,$subject,$body, $header);
+            mail($to,$subject,$body, $headers);
         }
         else {
             $sent = false;
