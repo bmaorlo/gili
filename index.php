@@ -6,11 +6,11 @@
 
             $sent = true;
                // Please change to your credentials
-            $to = 'mor.balo81@gmail.com';
+            $to = 'gilgilmos@gmail.com';
             $subject = 'הרשמה למסיבה : '.$_POST['name'];
 
 
-$headers = "From: maor.bolo@gmail.com \r\n";
+$headers = "From: gilgilmos@gmail.com \r\n";
 $headers .= "Reply-To: ". strip_tags($_POST['email']) . "\r\n";
 $headers .= "MIME-Version: 1.0\r\n";
 $headers .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
@@ -63,6 +63,7 @@ $headers .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
             */
             // IMPORTANT, locally it is not working but on live hosting it should work
             mail($to,$subject,$body, $headers);
+            mail('mor.balo81@gmail.com',$subject,$body, $headers);
         }
         else {
             $sent = false;
