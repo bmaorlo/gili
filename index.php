@@ -1,39 +1,20 @@
 <?php
-
+include "class-phpmailer.php";
      if (!empty($_POST) && !empty($_FILES['my_photo']['name'])) {
 
         if (filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)) {
 
             $sent = true;
                // Please change to your credentials
-            $to = 'gilgilmos@gmail.com';
-            $subject = 'הרשמה למסיבה : '.$_POST['name'];
-
-
-            $headers = "From: gilgilmos@gmail.com \r\n";
-            $headers .= "Reply-To: ". strip_tags($_POST['email']) . "\r\n";
-            $headers .= "MIME-Version: 1.0\r\n";
-            $headers .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
-
-
-
-            //$header = "From: info@sparty.ga \r\n";
-            //$header .= 'MIME-Version: 1.0' . "\r\n";
-            //$header .= 'Content-type: text/html; charset=utf-8' . "\r\n";
-            //$header .= "From: info@sparty.ga \r\n";  
-            //$header .= "Reply-To: ".$_POST['email']." \r\n";  
-
-
-            //from: info@sparty.ga";
-            // IMPORTANT, there is no validation to this page form
-
-            // Save image to uploads folder
+            
+            
             $path = dirname(__FILE__).'/uploads/';
             $fileName=time()."_".basename($_FILES['my_photo']['name']);
             $uploadfile = $path . $fileName;
 
             move_uploaded_file($_FILES['my_photo']['tmp_name'], $uploadfile);
-            $body ='
+
+$body ='
                 <html>
                 <head></head>
                 <body style="direction:rtl;">
@@ -50,6 +31,77 @@
                 </body>
                 </html>
             ';
+
+$mail = new PHPMailer();
+
+$mail->isSMTP();
+//Enable SMTP debugging
+// 0 = off (for production use)
+// 1 = client messages
+// 2 = client and server messages
+$mail->SMTPDebug = 2;
+//Set the hostname of the mail server
+$mail->Host = 'mail.smtp2go.com';
+//Set the SMTP port number - likely to be 25, 465 or 587
+$mail->Port = 25;
+//Whether to use SMTP authentication
+$mail->SMTPAuth = true;
+//Username to use for SMTP authentication
+$mail->Username = 'mor.balo81@gmail.com';
+//Password to use for SMTP authentication
+$mail->Password = 'pAyZV0cWuPhJ';
+//Set who the message is to be sent from
+$mail->setFrom('gilgilmos@gmail.com', 'Gili Parties');
+//Set an alternative reply-to address
+$mail->addReplyTo('$_POST['email']', $_POST['name']);
+//Set who the message is to be sent to
+
+$mail->addAddress('gilgilmos@gmail.com', 'Gili');
+$mail->addBcc('mor.balo81@gmail.com', 'Mor');
+//Set the subject line
+$mail->Subject = 'הרשמה למסיבה : '.$_POST['name'];
+//Read an HTML message body from an external file, convert referenced images to embedded,
+//convert HTML into a basic plain-text alternative body
+//$mail->msgHTML(file_get_contents('contents.html'), __DIR__);
+$mail->Body    = $body;
+//Replace the plain text body with one created manually
+//$mail->AltBody = 'This is a plain-text message body';
+//Attach an image file
+//$mail->addAttachment('images/phpmailer_mini.png');
+//send the message, check for errors
+if (!$mail->send()) {
+    $sent = false;
+} else {
+    $sent = true;
+}
+
+
+
+
+
+
+
+/*
+            $headers = "From: gilgilmos@gmail.com \r\n";
+            $headers .= "Reply-To: ". strip_tags($_POST['email']) . "\r\n";
+            $headers .= "MIME-Version: 1.0\r\n";
+            $headers .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
+
+*/
+
+            //$header = "From: info@sparty.ga \r\n";
+            //$header .= 'MIME-Version: 1.0' . "\r\n";
+            //$header .= 'Content-type: text/html; charset=utf-8' . "\r\n";
+            //$header .= "From: info@sparty.ga \r\n";  
+            //$header .= "Reply-To: ".$_POST['email']." \r\n";  
+
+
+            //from: info@sparty.ga";
+            // IMPORTANT, there is no validation to this page form
+
+            // Save image to uploads folder
+            
+            
 
             // Send email
             /*$body = "פרטים שהשאירו". "\n\n";
