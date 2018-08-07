@@ -10,10 +10,10 @@
             $subject = 'הרשמה למסיבה : '.$_POST['name'];
 
 
-$headers = "From: gilgilmos@gmail.com \r\n";
-$headers .= "Reply-To: ". strip_tags($_POST['email']) . "\r\n";
-$headers .= "MIME-Version: 1.0\r\n";
-$headers .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
+            $headers = "From: gilgilmos@gmail.com \r\n";
+            $headers .= "Reply-To: ". strip_tags($_POST['email']) . "\r\n";
+            $headers .= "MIME-Version: 1.0\r\n";
+            $headers .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
 
 
 
@@ -293,9 +293,9 @@ $headers .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
             <!-- IF EMAIL SENT SUCCESSFULLY -->
-            <? if ($sent) {?>
+            <?php if ($sent === true) {?>
                 <h3> תודה על ההרשמה, ניצור איתכם קשר בכתובת אימייל שציינתם</h3>
-            <?} else {?>
+            <?php} else {?>
             <!-- HERE COMES FORM-->
                 <h3> מלא פרטים להרשמה</h3>
                 <form action="index.php" method="post" enctype="multipart/form-data">
@@ -337,7 +337,7 @@ $headers .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
 
                     <button type="submit" class="btn btn-primary">הרשם</button>
                 </form>
-            <?}?>
+            <?php}?>
         </div>
     </div>
 
