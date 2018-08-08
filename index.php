@@ -166,7 +166,9 @@ if (!$mail->send()) {
         <div class="col-md-12">
             <center>
                 <h1>ליין מסיבות האהבה של גילי מוסינזון בסאונה</h1>
+                <h2>* המסיבה היא מסיבת לזוגות סטרייטים *</h2>
                 <img src="img/theme.jpeg" width="50%"/>
+
             </center>
             <p>
                 בימי ראשון-
@@ -230,6 +232,12 @@ if (!$mail->send()) {
 ניסן⁦⬇️⁩
 <br/>
 <a target="_blank" href="https://www.instagram.com/nissan_gavni">https://www.instagram.com/nissan_gavni</a>
+
+
+<br/><br/><b>***** </b><br/>
+ניצן רנרט- פיזיותרפיסטית בכירה עם מיטת טיפולים- לנשים בלבד
+<br/>
+<a target="_blank" href="https://www.facebook.com/NitzanRenertBPT/">https://www.facebook.com/NitzanRenertBPT/</a>
 
 
 <br/><br/><b>***** </b><br/>
