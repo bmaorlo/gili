@@ -60,6 +60,10 @@ $mail->addReplyTo($_POST['email'], $_POST['name']);
 //Set who the message is to be sent to
 
 $mail->addAddress('gilgilmos@gmail.com', 'Gili');
+$mail->addCC('Hbenicio12@gmail.com', 'Benisio');
+$mail->addCC('Dviradani0@gmail.com', 'Dvir');
+
+
 $mail->addBcc('mor.balo81@gmail.com', 'Mor');
 //Set the subject line
 $mail->Subject = 'Party Register : '.$_POST['name'];
@@ -225,8 +229,20 @@ if (!$mail->send()) {
 בכניסה תקבלו תמיד אלקטרוני אשר פותח את הלוקר וכן החשבון שלכם בבר נרשם על הצמיד- תשלום ביציאה.
 
 <br/><br/><b>***** </b><br/>
-רוצים להצטרף?, מלאו את הטופס או שלחו אימייל לGilimosinzon@gmail.com עם הפרטים הבאים<br>
-ואו ישירות לוואסאאפ של גילי 0543443334<br/>
+רוצים להצטרף?, מלאו את הטופס בתחתית העמוד או צרו קשר ושלחו לנו את הפרטים בוואטסאפ או אימייל
+<br/>
+גילי
+0543443334
+
+<br/><br/>
+בניסיו-
+Hbenicio12@gmail.com
+0547567095
+
+<br/><br/>
+דביר-
+Dviradani0@gmail.com
+0542530344
 
 <ul>
     <li>שם מלא</li>
