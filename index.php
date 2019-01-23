@@ -60,7 +60,6 @@ $mail->addReplyTo($_POST['email'], $_POST['name']);
 //Set who the message is to be sent to
 
 $mail->addAddress('gilgilmos@gmail.com', 'Gili');
-$mail->addCC('Hbenicio12@gmail.com', 'Benisio');
 $mail->addCC('Dviradani0@gmail.com', 'Dvir');
 
 
@@ -242,13 +241,6 @@ if (!$mail->send()) {
 גילי
 <br/>
 0543443334
-
-<br/><br/>
-בניסיו-
-<br/>
-Hbenicio12@gmail.com
-<br/>
-0547567095
 
 <br/><br/>
 דביר-
